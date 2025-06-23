@@ -4,4 +4,4 @@
 Run kubectl create deployment theproject --image=alago0/theproject
 
 ## 1.4
-Run kubectl apply -f deployment.yaml
+Run kubectl apply -f manifests/deployment.yaml
