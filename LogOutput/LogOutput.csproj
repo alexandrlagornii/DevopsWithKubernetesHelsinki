@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,5 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="manifests\service.yaml\**" />
+    <Content Remove="manifests\service.yaml\**" />
+    <EmbeddedResource Remove="manifests\service.yaml\**" />
+    <None Remove="manifests\service.yaml\**" />
+  </ItemGroup>
 
 </Project>

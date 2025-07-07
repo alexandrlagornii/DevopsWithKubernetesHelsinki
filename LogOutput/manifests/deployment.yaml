@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: logoutput
-          image: alago0/logoutput:23-6-2025
+          image: alago0/logoutput:7-7-2025-ver2
