@@ -7,4 +7,5 @@ Run kubectl create deployment logoutput --image=alago0/logoutput
 Run kubectl apply -f manifests/deployment.yaml
 
 ## 1.7
-Run kubectl apply -f manifests
+Run: kubectl apply -f manifests
+Access: 127.0.0.1:8081
