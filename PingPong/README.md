@@ -1,4 +1,5 @@
 ## 1.9
-From root run: kubectl apply -f LogOutput/manifests <br />
-               kubectl apply -f PingPong/manifests
+From root run: <br />
+&nbsp;kubectl apply -f LogOutput/manifests <br />
+&nbsp;kubectl apply -f PingPong/manifests <br />
 Access: localhost:8081/pingpong
