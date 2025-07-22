@@ -9,3 +9,7 @@ Run kubectl apply -f manifests/deployment.yaml
 ## 1.7
 Run: kubectl apply -f manifests </br>
 Access: 127.0.0.1:8081
+
+## 1.10
+Run: kubectl apply -f manifests </br>
+Access: 127.0.0.1:8081
