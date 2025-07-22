@@ -1,6 +1,6 @@
-﻿namespace LogOutput
+﻿namespace LogOutputWrite
 {
-  public class LogOutputSingleton
+  public class LogOutputWriteSingleton
   {
     public string LastLogEntry { get; set; } = string.Empty;
   }

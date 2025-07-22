@@ -1,11 +1,14 @@
-﻿namespace LogOutput
+﻿using System.Runtime.InteropServices;
+
+namespace LogOutputWrite
 {
   public class BackgroundLogService : BackgroundService
   {
     private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(5));
-    private readonly LogOutputSingleton _logOutputSingleton;
+    private readonly LogOutputWriteSingleton _logOutputSingleton;
+    private readonly string _filePath = "wwwroot/logoutput.txt";
 
-    public BackgroundLogService(LogOutputSingleton logOutputSingleton)
+    public BackgroundLogService(LogOutputWriteSingleton logOutputSingleton)
     {
       _logOutputSingleton = logOutputSingleton;
     }
@@ -15,6 +18,8 @@
       do
       {
         _logOutputSingleton.LastLogEntry = $"{DateTime.Now}: {Guid.NewGuid().ToString()}";
+        File.WriteAllText(_filePath, _logOutputSingleton.LastLogEntry);
+        Console.WriteLine($"Written {_logOutputSingleton.LastLogEntry}");
       }
       while (await _timer.WaitForNextTickAsync(stoppingToken) &&
              !stoppingToken.IsCancellationRequested);

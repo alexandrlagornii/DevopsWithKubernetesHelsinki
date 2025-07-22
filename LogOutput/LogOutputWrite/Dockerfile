@@ -9,4 +9,4 @@ RUN dotnet restore && \
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /out
 COPY --from=build /app/out .
-CMD ["dotnet", "LogOutput.dll"]
+CMD ["dotnet", "LogOutputWrite.dll"]
