@@ -3,15 +3,18 @@ var app = builder.Build();
 
 app.MapGet("/", () =>
 {
-  string filePath = "wwwroot/logoutput.txt";
+  string logoutputPath = "LogoutputShared/logoutput.txt";
+  string pingpongPath = "PingpongShared/ping-pong.txt";
   try
   {
-    string logoutput = File.ReadAllText(filePath);
-    return logoutput;
+    string logoutput = File.ReadAllText(logoutputPath);
+    string pingpong = File.ReadAllText(pingpongPath);
+    string text = $"{logoutput}\r\n{pingpong}";
+    return text;
   }
-  catch
+  catch (Exception ex)
   {
-    return string.Empty;
+    return ex.Message;
   }
 });
 

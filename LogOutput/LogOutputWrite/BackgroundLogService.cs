@@ -6,7 +6,7 @@ namespace LogOutputWrite
   {
     private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(5));
     private readonly LogOutputWriteSingleton _logOutputSingleton;
-    private readonly string _filePath = "wwwroot/logoutput.txt";
+    private readonly string _filePath = "LogoutputShared/logoutput.txt";
 
     public BackgroundLogService(LogOutputWriteSingleton logOutputSingleton)
     {

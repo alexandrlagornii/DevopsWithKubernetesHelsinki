@@ -13,16 +13,21 @@ spec:
         app: logoutput
     spec:
       volumes:
-        - name: shared-wwwroot
+        - name: shared-logoutput
           emptyDir: {}
+        - name: shared-pingpong
+          persistentVolumeClaim:
+            claimName: pingpong-pv-claim
       containers:
         - name: logoutput-write
-          image: alago0/logoutput-write:7-22-2025
+          image: alago0/logoutput-write:7-28-2025-ver2
           volumeMounts:
-            - name: shared-wwwroot
-              mountPath: /out/wwwroot
-        - name: logouput-read-api
-          image: alago0/logoutput-read-api:7-22-2025
+            - name: shared-logoutput
+              mountPath: /out/LogoutputShared
+        - name: logoutput-read-api
+          image: alago0/logoutput-read-api:7-28-2025-ver3
           volumeMounts:
-            - name: shared-wwwroot
-              mountPath: /out/wwwroot
+            - name: shared-logoutput
+              mountPath: /out/LogoutputShared
+            - name: shared-pingpong
+              mountPath: /out/PingpongShared
