@@ -29,5 +29,5 @@ In current directory run: kubectl apply -f manifests <br />
 Access using localhost:8081
 
 ## 1.13
-Run: kubectl apply -f manifests
+Run: kubectl apply -f manifests <br />
 Access using localhost:8081
