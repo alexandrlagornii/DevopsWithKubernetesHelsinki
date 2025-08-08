@@ -27,3 +27,7 @@ In root run: kubectl apply -f volume-manifests/randomimagevolume.yaml <br />
 In root run: kubectl apply -f volume-manifests/randomimagevolumeclaim.yaml <br />
 In current directory run: kubectl apply -f manifests <br />
 Access using localhost:8081
+
+## 1.13
+Run: kubectl apply -f manifests
+Access using localhost:8081

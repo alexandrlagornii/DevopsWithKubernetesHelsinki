@@ -18,7 +18,7 @@ spec:
             claimName: randomimage-claim
       containers:
         - name: theproject
-          image: alago0/theproject:8-8-2025-ver13
+          image: alago0/theproject:8-8-2025-ver14
           volumeMounts:
           - name: random-image
             mountPath: /out/wwwroot/RandomPicture
