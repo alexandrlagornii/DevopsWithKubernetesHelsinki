@@ -14,3 +14,4 @@
 - [1.9](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/1.9/PingPong)
 - [1.10](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/1.10/LogOutput)
 - [1.11](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/1.11/LogOutput)
+- [1.12](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/1.12/TheProject)
