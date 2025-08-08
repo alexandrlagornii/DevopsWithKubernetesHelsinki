@@ -20,3 +20,10 @@ Access using localhost:8082
 ## 1.7
 Run: kubectl apply -f manifests <br />
 Access: localhost:8081
+
+## 1.12
+Run: docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/randomimage <br />
+In root run: kubectl apply -f volume-manifests/randomimagevolume.yaml <br />
+In root run: kubectl apply -f volume-manifests/randomimagevolumeclaim.yaml <br />
+In current directory run: kubectl apply -f manifests <br />
+Access using localhost:8081

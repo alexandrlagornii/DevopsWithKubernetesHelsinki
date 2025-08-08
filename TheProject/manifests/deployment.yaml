@@ -12,6 +12,13 @@ spec:
       labels:
         app: theproject
     spec:
+      volumes:
+        - name: random-image
+          persistentVolumeClaim:
+            claimName: randomimage-claim
       containers:
         - name: theproject
-          image: alago0/theproject:23-6-2025
+          image: alago0/theproject:8-8-2025-ver13
+          volumeMounts:
+          - name: random-image
+            mountPath: /out/wwwroot/RandomPicture

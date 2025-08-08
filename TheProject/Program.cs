@@ -1,10 +1,12 @@
 using TheProject.Components;
+using TheProject.RandomPicture;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddHostedService<RandomPictureService>();
 
 var app = builder.Build();
 
@@ -24,6 +26,13 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
-string port = Environment.GetEnvironmentVariable("PORT") ?? "";
-Console.WriteLine($"Server started in port {port}");
-app.Run($"http://*:{port}");
+if (!app.Environment.IsDevelopment())
+{
+  string port = Environment.GetEnvironmentVariable("PORT") ?? "";
+  Console.WriteLine($"Server started in port {port}");
+  app.Run($"http://*:{port}");
+}
+else
+{
+  app.Run();
+}
