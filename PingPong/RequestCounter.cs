@@ -18,5 +18,10 @@
       WriteToFile();
       return requests;
     }
+
+    public ulong ShowCounter()
+    {
+      return requests;
+    }
   }
 }

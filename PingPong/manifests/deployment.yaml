@@ -12,13 +12,6 @@ spec:
       labels:
         app: pingpong
     spec:
-      volumes:
-        - name: shared-pingpong
-          persistentVolumeClaim:
-            claimName: pingpong-pv-claim
       containers:
         - name: logoutput
-          image: alago0/pingpong:7-29-2025
-          volumeMounts:
-            - name: shared-pingpong
-              mountPath: /out/PingpongShared
+          image: alago0/pingpong:8-13-2025-ver3

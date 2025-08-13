@@ -1,14 +1,24 @@
+using LogOutputReadApi.PingPongService;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Ping pong service
+builder.Services.AddSingleton<PingPongSettings>(options =>
+{
+  var configuration = options.GetRequiredService<IConfiguration>();
+  return configuration.GetSection("PingPongServiceSettings").Get<PingPongSettings>()!;
+});
+builder.Services.AddHttpClient<PingPongClient>();
+
 var app = builder.Build();
 
-app.MapGet("/", () =>
+app.MapGet("/", async (PingPongClient client) =>
 {
   string logoutputPath = "LogoutputShared/logoutput.txt";
-  string pingpongPath = "PingpongShared/ping-pong.txt";
   try
   {
     string logoutput = File.ReadAllText(logoutputPath);
-    string pingpong = File.ReadAllText(pingpongPath);
+    string pingpong = await client.GetPings();
     string text = $"{logoutput}\r\n{pingpong}";
     return text;
   }

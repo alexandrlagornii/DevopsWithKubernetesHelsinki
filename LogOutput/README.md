@@ -24,3 +24,11 @@ kubectl apply -f LogOutput/manifests</br>
 </br>
 Access localhost:8081/pingpong to write pongs</br>
 Access localhost:8081 to read logoutput and ping/pongs
+
+## 2.1
+In root folder run: </br>
+kubectl apply -f PingPong/manifests </br>
+kubectl apply -f LogOutput/manifests </br>
+</br>
+Access localhost:8081/pingpong to write pongs</br>
+Access localhost:8081 to read logoutput and ping/pongs
