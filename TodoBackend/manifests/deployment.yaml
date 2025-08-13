@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todobackend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todobackend
+  template:
+    metadata:
+      labels:
+        app: todobackend
+    spec:
+      containers:
+        - name: todobackend
+          image: alago0/todobackend:8-13-2025

@@ -1,5 +1,6 @@
 using TheProject.Components;
 using TheProject.RandomPicture;
+using TheProject.TodoService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddHostedService<RandomPictureService>();
+builder.Services.AddSingleton<TodoClientSettings>(options =>
+{
+  var configuration = options.GetRequiredService<IConfiguration>();
+  return configuration.GetSection("TodoBackendSettings").Get<TodoClientSettings>()!;
+});
+builder.Services.AddHttpClient<TodoClient>();
 
 var app = builder.Build();
 
