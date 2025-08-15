@@ -31,3 +31,12 @@ Access using localhost:8081
 ## 1.13
 Run: kubectl apply -f manifests <br />
 Access using localhost:8081
+
+## 2.4
+Run: kubectl create namespace project <br />
+Namespaces are specified in yaml files <br />
+Run: docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/randomimage <br />
+In root run: kubectl apply -f volume-manifests/randomimagevolume.yaml <br />
+In root run: kubectl apply -f volume-manifests/randomimagevolumeclaim.yaml <br />
+In TodoBackend and TheProject run: kubectl apply -f manifests <br />
+Access using localhost:8081
