@@ -32,3 +32,13 @@ kubectl apply -f LogOutput/manifests </br>
 </br>
 Access localhost:8081/pingpong to write pongs</br>
 Access localhost:8081 to read logoutput and ping/pongs
+
+## 2.3
+Create namespace exercises: kubectl create namespace exercises </br>
+Namespaces are specified in yaml files </br>
+Run in root: kubectl apply -f volume-manifests/pingpongvolume.yaml </br>
+Run in root: kubectl apply -f volume-manifests/pingpongvolumeclaim.yaml </br>
+Run in root: kubectl apply -f PingPong/manifests </br>
+Run in root: kubectl apply -f LogOutput/manifests</br>
+Access localhost:8081/pingpong to write pongs</br>
+Access localhost:8081 to read logoutput and ping/pongs
