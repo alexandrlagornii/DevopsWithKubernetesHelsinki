@@ -42,3 +42,6 @@ Run in root: kubectl apply -f PingPong/manifests </br>
 Run in root: kubectl apply -f LogOutput/manifests</br>
 Access localhost:8081/pingpong to write pongs</br>
 Access localhost:8081 to read logoutput and ping/pongs
+
+## 2.5
+Same steps as 2.3

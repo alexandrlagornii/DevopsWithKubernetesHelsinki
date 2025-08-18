@@ -16,6 +16,9 @@ spec:
       volumes:
         - name: shared-logoutput
           emptyDir: {}
+        - name: config-logoutput
+          configMap:
+            name: logoutput-configmap
       containers:
         - name: logoutput-write
           image: alago0/logoutput-write:7-28-2025-ver2
@@ -23,7 +26,16 @@ spec:
             - name: shared-logoutput
               mountPath: /out/LogoutputShared
         - name: logoutput-read-api
-          image: alago0/logoutput-read-api:8-13-2025-ver2
+          image: alago0/logoutput-read-api:8-18-2025
+          env:
+            - name: MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: logoutput-configmap
+                  key: message
           volumeMounts:
             - name: shared-logoutput
               mountPath: /out/LogoutputShared
+            - name: config-logoutput
+              mountPath: /out/information.txt
+              subPath: information.txt
