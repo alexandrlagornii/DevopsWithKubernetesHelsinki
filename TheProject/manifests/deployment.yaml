@@ -17,9 +17,15 @@ spec:
         - name: random-image
           persistentVolumeClaim:
             claimName: randomimage-claim
+        - name: theproject-configmap-volume
+          configMap:
+            name: theproject-configmap
       containers:
         - name: theproject
           image: alago0/theproject:8-13-2025
           volumeMounts:
           - name: random-image
             mountPath: /out/wwwroot/RandomPicture
+          - name: theproject-configmap-volume
+            mountPath: /out/appsettings.json
+            subPath: appsettings.json

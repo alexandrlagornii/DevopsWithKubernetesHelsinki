@@ -13,6 +13,14 @@ spec:
       labels:
         app: todobackend
     spec:
+      volumes:
+        - name: todobackend-configmap-volume
+          configMap:
+            name: todobackend-configmap
       containers:
         - name: todobackend
           image: alago0/todobackend:8-13-2025
+          volumeMounts:
+            - name: todobackend-configmap-volume
+              mountPath: /out/appsettings.json
+              subPath: appsettings.json

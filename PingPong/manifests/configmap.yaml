@@ -1,17 +1,11 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: logoutput-configmap
+  name: pingpong-configmap
   namespace: exercises
 data:
-  message: "hello world!"
-  information.txt: |
-    this text is from file
   appsettings.json: |
     {
-      "PingPongServiceSettings": {
-        "URL":  "http://pingpong-svc:2346"
-      },
       "Logging": {
         "LogLevel": {
           "Default": "Information",

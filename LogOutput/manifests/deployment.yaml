@@ -39,3 +39,6 @@ spec:
             - name: config-logoutput
               mountPath: /out/information.txt
               subPath: information.txt
+            - name: config-logoutput
+              mountPath: /out/appsettings.json
+              subPath: appsettings.json

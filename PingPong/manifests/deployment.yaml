@@ -13,6 +13,14 @@ spec:
       labels:
         app: pingpong
     spec:
+      volumes:
+        - name: pingpong-configmap-volume
+          configMap:
+            name: pingpong-configmap
       containers:
         - name: logoutput
           image: alago0/pingpong:8-13-2025-ver3
+          volumeMounts:
+          - name: pingpong-configmap-volume
+            mountPath: /out/appsettings.json
+            subPath: appsettings.json
