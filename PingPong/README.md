@@ -9,5 +9,5 @@ Access: localhost:8081/pingpong
 From root run: <br />
 &nbsp;&nbsp;&nbsp;&nbsp;kubectl apply -f PingPong/manifests <br />
 &nbsp;&nbsp;&nbsp;&nbsp;kubectl apply -f LogOutput/manifests <br />
-To put ping into db: localhost:8081/pingpong
-to see pings and logs: localhost:8081
+To put ping into db: localhost:8081/pingpong <br />
+To see pings and logs: localhost:8081
