@@ -12,3 +12,6 @@ In root run: kubectl apply -f volume-manifests <br />
 In TodoBackend run: kubectl apply -f manifests <br />
 In TheProject run: kubectl apply -f manifests <br />
 Access using localhost:8081
+
+## 2.9
+Same as 2.8
