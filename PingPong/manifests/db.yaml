@@ -1,0 +1,84 @@
+# StatefulSet
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: db-stset
+  namespace: exercises
+spec:
+  serviceName: db-svc
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dbapp
+  template:
+    metadata:
+      labels:
+        app: dbapp
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:17
+          ports:
+            - name: db-port
+              containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: pingpong
+            - name: POSTGRES_USER
+              value: pingpong
+            - name: POSTGRES_PASSWORD
+              value: pingpong
+          volumeMounts:
+            - name: init-scripts
+              mountPath: /docker-entrypoint-initdb.d/
+            - name: db-storage
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: init-scripts
+          configMap:
+            name: db-init
+  volumeClaimTemplates:
+    - metadata:
+        name: db-storage
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: local-path
+        resources:
+          requests:
+            storage: 100Mi
+---
+
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-svc
+  namespace: exercises
+  labels:
+    app: db
+spec:
+  ports:
+    - port: 5432
+      name: db-port
+  clusterIP: None
+  selector:
+    app: dbapp
+
+---
+
+# ConfigMap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-init
+  namespace: exercises
+data:
+  01-create-ping-table.sql: |
+    CREATE TABLE IF NOT EXISTS pings (
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(10),
+      number INTEGER
+    );
+
+    INSERT INTO pings (name, number) VALUES ('pings', 0);
+

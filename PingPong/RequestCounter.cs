@@ -1,27 +1,49 @@
-﻿namespace PingPong
+﻿using System.Threading.Tasks;
+using Npgsql;
+
+namespace PingPong
 {
   public class RequestCounter
   {
-    public ulong requests = 0;
-
-    private readonly string _pingFilePath = "PingpongShared/ping-pong.txt";
-
-    private void IncreaseCounter() => requests++;
-    private void WriteToFile()
+    private string _connectionString;
+    public RequestCounter(PostgresSettings settings)
     {
-      var text = $"Ping / Pongs: {requests}";
-      File.WriteAllText(_pingFilePath, text);
-    }
-    public ulong ShowAndIncreaseCounter()
-    {
-      IncreaseCounter();
-      WriteToFile();
-      return requests;
+      _connectionString = $"Host={settings.Host};Port={settings.Port};Database={settings.Db};Username={settings.Username};Password={settings.Password};";
     }
 
-    public ulong ShowCounter()
+    private async Task IncreaseCounter()
     {
-      return requests;
+      await using var dataSource = NpgsqlDataSource.Create(_connectionString);
+      await using (var cmd = dataSource.CreateCommand("UPDATE pings SET number = number + 1;"))
+      {
+        await cmd.ExecuteNonQueryAsync();
+      }
+    }
+
+    private async Task<ulong> GetCounter()
+    {
+      await using var dataSource = NpgsqlDataSource.Create(_connectionString);
+      await using (var cmd = dataSource.CreateCommand("SELECT number FROM pings"))
+      await using (var reader = await cmd.ExecuteReaderAsync())
+      {
+        while (await reader.ReadAsync())
+        {
+          return (ulong)reader.GetFieldValue<int>(0);
+        }
+      }
+
+      return 0;
+    }
+
+    public async Task<ulong> ShowCounter()
+    {
+      return (await GetCounter()); 
+    }
+    
+    public async Task<ulong> ShowAndIncreaseCounter()
+    {
+      await IncreaseCounter();
+      return (await GetCounter());
     }
   }
 }

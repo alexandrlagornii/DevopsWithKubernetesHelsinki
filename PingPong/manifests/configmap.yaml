@@ -6,6 +6,13 @@ metadata:
 data:
   appsettings.json: |
     {
+      "PostgresSettings": {
+        "Host": "db-svc",
+        "Port": "5432",
+        "Username": "pingpong",
+        "Password": "pingpong",
+        "Db": "pingpong"
+      },
       "Logging": {
         "LogLevel": {
           "Default": "Information",
