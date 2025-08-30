@@ -25,3 +25,4 @@
 - [2.5](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/2.5/LogOutput)
 - [2.6](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/2.6)
 - [2.7](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/2.7/PingPong)
+- [2.8](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/2.8/TodoBackend)
