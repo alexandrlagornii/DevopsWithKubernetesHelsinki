@@ -24,3 +24,4 @@
 - [2.4](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/2.4/TheProject)
 - [2.5](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/2.5/LogOutput)
 - [2.6](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/2.6)
+- [2.7](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/2.7/PingPong)
