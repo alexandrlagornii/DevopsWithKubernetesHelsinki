@@ -6,6 +6,13 @@ metadata:
 data:
   appsettings.json: |
     {
+      "PostgresSettings": {
+        "Host": "db-svc",
+        "Port": "5432",
+        "Username": "todos",
+        "Password": "todos",
+        "Db": "todos"
+      },
       "Logging": {
         "LogLevel": {
           "Default": "Information",
