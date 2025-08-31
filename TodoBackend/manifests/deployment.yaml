@@ -19,7 +19,7 @@ spec:
             name: todobackend-configmap
       containers:
         - name: todobackend
-          image: alago0/todobackend:8-30-2025-ver2
+          image: alago0/todobackend:8-31-2025
           volumeMounts:
             - name: todobackend-configmap-volume
               mountPath: /out/appsettings.json

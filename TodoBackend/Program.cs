@@ -13,7 +13,14 @@ var app = builder.Build();
 app.MapGet("/todos", async (TodoDatabase db) => await db.GetTodos());
 app.MapPost("/todos", async (TodoModel todo, TodoDatabase db) =>
 {
-  await db.AddTodo(todo);
+  if (todo.Name.Length > 140)
+  {
+    Console.WriteLine("REQUEST LOG: Todo longer than 140 characters");
+  }
+  else
+  {
+    await db.AddTodo(todo);
+  }
   return true;
 });
 

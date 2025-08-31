@@ -15,3 +15,9 @@ Access using localhost:8081
 
 ## 2.9
 Same as 2.8
+
+## 2.10
+Same as 2.8 <br />
+Install prometheus, grafana, loki, promtail using course instructions <br />
+Label filters: app = todobackend <br />
+Line contains: REQUEST LOG <br />
