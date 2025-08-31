@@ -15,11 +15,12 @@ app.MapPost("/todos", async (TodoModel todo, TodoDatabase db) =>
 {
   if (todo.Name.Length > 140)
   {
-    Console.WriteLine("REQUEST LOG: Todo longer than 140 characters");
+    Console.WriteLine($"REQUEST LOG: Todo longer than 140 characters - {todo.Name}");
   }
   else
   {
     await db.AddTodo(todo);
+    Console.WriteLine($"REQUEST LOG: Todo added - {todo.Name}");
   }
   return true;
 });
