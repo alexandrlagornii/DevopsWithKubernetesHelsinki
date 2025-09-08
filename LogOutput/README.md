@@ -53,3 +53,11 @@ From root run: <br />
 Had to wait a lot of time for ingress to get ready <br />
 To put ping into db: http://&lt;ingress-ip&gt;/pingpong <br />
 To see pings and logs: http://&lt;ingress-ip&gt;/
+
+## 3.3
+From root run: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;kubectl apply -f PingPong/manifests <br />
+&nbsp;&nbsp;&nbsp;&nbsp;kubectl apply -f LogOutput/manifests <br />
+Had to wait a lot of time for gateway to get ready <br />
+To put ping into db: http://&lt;gateway-ip&gt;/pingpong <br />
+To see pings and logs: http://&lt;gateway-ip&gt;/
