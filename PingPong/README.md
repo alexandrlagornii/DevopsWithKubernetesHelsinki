@@ -17,5 +17,7 @@ To see pings and logs: localhost:8081
 From root run: <br />
 &nbsp;&nbsp;&nbsp;&nbsp;kubectl apply -f PingPong/manifests <br />
 &nbsp;&nbsp;&nbsp;&nbsp;kubectl apply -f LogOutput/manifests <br />
+<pre>
 To put ping into db: http://<pingpong-svc external ip>/pingpong <br />
 To see pings and logs: http://<logoutput-svc external ip>/
+</pre>
