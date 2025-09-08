@@ -31,3 +31,4 @@
 
 ### Chapter 4
 - [3.1](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.1/PingPong)
+- [3.2](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.2/LogOutput)
