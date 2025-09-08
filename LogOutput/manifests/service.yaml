@@ -4,10 +4,10 @@ metadata:
   name: logoutput-svc
   namespace: exercises
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: logoutput
   ports:
-    - port: 2345
+    - port: 80
       protocol: TCP
       targetPort: 8080

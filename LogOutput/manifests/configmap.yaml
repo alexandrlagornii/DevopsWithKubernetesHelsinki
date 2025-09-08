@@ -10,7 +10,7 @@ data:
   appsettings.json: |
     {
       "PingPongServiceSettings": {
-        "URL":  "http://pingpong-svc:2346"
+        "URL":  "http://pingpong-svc:80"
       },
       "Logging": {
         "LogLevel": {
