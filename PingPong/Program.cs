@@ -12,5 +12,6 @@ var app = builder.Build();
 
 app.MapGet("/pingpong", async (RequestCounter requestCounter) => $"pong {await requestCounter.ShowAndIncreaseCounter()}");
 app.MapGet("/pings", async (RequestCounter requestCounter) => $"Ping / Pongs: {await requestCounter.ShowCounter()}");
+app.MapGet("/", () => "Alive");
 
 app.Run($"http://*:80");

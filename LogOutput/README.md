@@ -45,3 +45,11 @@ Access localhost:8081 to read logoutput and ping/pongs
 
 ## 2.5
 Same steps as 2.3
+
+## 3.2
+From root run: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;kubectl apply -f PingPong/manifests <br />
+&nbsp;&nbsp;&nbsp;&nbsp;kubectl apply -f LogOutput/manifests <br />
+Had to wait a lot of time for ingress to get ready <br />
+To put ping into db: http://&lt;ingress-ip&gt;/pingpong <br />
+To see pings and logs: http://&lt;ingress-ip&gt;/
