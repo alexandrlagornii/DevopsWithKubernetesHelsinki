@@ -61,3 +61,12 @@ From root run: <br />
 Had to wait a lot of time for gateway to get ready <br />
 To put ping into db: http://&lt;gateway-ip&gt;/pingpong <br />
 To see pings and logs: http://&lt;gateway-ip&gt;/
+
+## 3.4
+From root run: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;kubectl apply -f PingPong/manifests <br />
+&nbsp;&nbsp;&nbsp;&nbsp;kubectl apply -f LogOutput/manifests <br />
+Had to wait a lot of time for gateway to get ready <br />
+To put ping into db: http://&lt;gateway-ip&gt;/pingpong <br />
+To see pings and logs: http://&lt;gateway-ip&gt;/ <br />
+Since /pingpong rewrites to just / and / is used to check health expect to get around 100 pongs in db (Ill change it to some path later but we can see now that it does rewrite)

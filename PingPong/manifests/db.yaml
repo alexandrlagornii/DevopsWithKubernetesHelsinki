@@ -30,7 +30,7 @@ spec:
               value: pingpong
           volumeMounts:
             - name: init-scripts
-              mountPath: /docker-entrypoint-initdb.d/
+              mountPath: /docker-entrypoint-initdb.d
             - name: db-storage
               mountPath: /var/lib/postgresql/data
               subPath: postgres
@@ -82,4 +82,3 @@ data:
     );
 
     INSERT INTO pings (name, number) VALUES ('pings', 0);
-

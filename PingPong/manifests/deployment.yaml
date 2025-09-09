@@ -14,8 +14,8 @@ spec:
         app: pingpong
     spec:
       containers:
-        - name: logoutput
-          image: alago0/pingpong:9-8-2025
+        - name: pingpong
+          image: alago0/pingpong:9-9-2025-ver2
           volumeMounts:
           - name: pingpong-configmap-volume
             mountPath: /out/appsettings.json

@@ -8,7 +8,7 @@ namespace PingPong
     private string _connectionString;
     public RequestCounter(PostgresSettings settings)
     {
-      _connectionString = $"Host={settings.Host};Port={settings.Port};Database={settings.Db};Username={settings.Username};Password={settings.Password};";
+      _connectionString = $"Host={settings.Host};Port={settings.Port};Database={settings.Db};Username={settings.Username};Password={settings.Password};SslMode=Disable";
     }
 
     private async Task IncreaseCounter()
