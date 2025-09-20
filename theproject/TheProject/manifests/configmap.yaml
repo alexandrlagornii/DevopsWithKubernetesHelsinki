@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: theproject-configmap
+  namespace: project
+data:
+  appsettings.json: |
+    {
+      "TodoBackendSettings": {
+        "URL": "http://todobackend-svc:2348" 
+      },
+      "Logging": {
+        "LogLevel": {
+          "Default": "Information",
+          "Microsoft.AspNetCore": "Warning"
+        }
+      },
+      "AllowedHosts": "*"
+    }

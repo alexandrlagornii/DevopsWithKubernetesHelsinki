@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todobackend
+  namespace: project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todobackend
+  template:
+    metadata:
+      labels:
+        app: todobackend
+    spec:
+      volumes:
+        - name: todobackend-configmap-volume
+          configMap:
+            name: todobackend-configmap
+      containers:
+        - name: todobackend
+          image: alago0/todobackend:8-31-2025-ver2
+          volumeMounts:
+            - name: todobackend-configmap-volume
+              mountPath: /out/appsettings.json
+              subPath: appsettings.json
