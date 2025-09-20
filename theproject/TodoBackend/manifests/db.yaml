@@ -33,6 +33,7 @@ spec:
               mountPath: /docker-entrypoint-initdb.d/
             - name: db-storage
               mountPath: /var/lib/postgresql/data
+              subPath: postgres
       volumes:
         - name: init-scripts
           configMap:
