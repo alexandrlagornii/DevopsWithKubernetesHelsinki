@@ -62,9 +62,19 @@ jobs:
       - name: 'Set up kustomize'
         uses: syntaqx/setup-kustomize@v1
 
+      - name: 'Set target namespace'
+        run: |
+          if [[ "$BRANCH" == "main" ]] ; then
+            echo "NAMESPACE=project" >> $GITHUB_ENV
+          else
+            echo "NAMESPACE=$BRANCH" >> $GITHUB_ENV
+          fi
+          echo $NAMESPACE
+
       - name: Deploy
         run: |
           cd ./theproject
+          kustomize edit set namespace $NAMESPACE
           kustomize edit set image \
             THEPROJECT/IMAGE=$PROJECT_IMAGE_TAG \
             TODOBACKEND/IMAGE=$TODOBACKEND_IMAGE_TAG
