@@ -14,7 +14,6 @@ env:
   PROJECT_IMAGE: project
   TODOBACKEND_IMAGE: todobackend
   
-  SERIVICE: project
   BRANCH: ${{ github.ref_name }}
 
 jobs:
@@ -22,6 +21,7 @@ jobs:
     name: Build, Publish, and Deploy
     runs-on: ubuntu-latest
     environment: main
+    if: github.event.ref_type == 'branch'
 
     steps:
       - name: Checkout
