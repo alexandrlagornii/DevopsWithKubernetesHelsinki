@@ -51,7 +51,7 @@ jobs:
 
       - name: 'Build and Push'
         run: |
-          docker build ./project/TheProject -t $PROJECT_IMAGE_TAG
+          docker build ./theproject/TheProject -t $PROJECT_IMAGE_TAG
           docker push $PROJECT_IMAGE_TAG
-          docker build ./project/TodoBackend -t $TODOBACKEND_IMAGE_TAG
+          docker build ./theproject/TodoBackend -t $TODOBACKEND_IMAGE_TAG
           docker push $TODOBACKEND_IMAGE_TAG
