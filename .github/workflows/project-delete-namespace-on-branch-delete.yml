@@ -2,8 +2,7 @@ name: Delete namespace on branch delete
 
 on:
   delete:
-    branches:
-      types: [branch]
+    types: [branch]
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
