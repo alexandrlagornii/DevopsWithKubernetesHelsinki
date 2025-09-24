@@ -13,8 +13,8 @@ resources:
   - ./TodoBackend/manifests/db.yaml
   - ./volume-manifests/randomimagevolumeclaim.yaml
 
-  images:
-    - name: THEPROJECT/IMAGE
-      newName: THEPROJECT/IMAGE
-    - name: TODOBACKEND/IMAGE
-      newName: TODOBACKEND/IMAGE
+images:
+  - name: THEPROJECT/IMAGE
+    newName: THEPROJECT/IMAGE
+  - name: TODOBACKEND/IMAGE
+    newName: TODOBACKEND/IMAGE
