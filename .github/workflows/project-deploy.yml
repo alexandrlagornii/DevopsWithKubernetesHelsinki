@@ -58,3 +58,14 @@ jobs:
           echo "TodoBackend image: $TODOBACKEND_IMAGE_TAG"
           docker build ./theproject/TodoBackend -t $TODOBACKEND_IMAGE_TAG
           docker push $TODOBACKEND_IMAGE_TAG
+
+      - name: 'Set up kustomize'
+        uses: syntaqx/setup-kustomize@v1
+
+      - name: Deploy
+        run: |
+          cd ./theproject
+          kustomize edit set image \
+            THEPROJECT/IMAGE=$PROJECT_IMAGE_TAG \
+            TODOBACKEND/IMAGE=$TODOBACKEND_IMAGE_TAG
+          kustomize build . | kubectl apply -f -
