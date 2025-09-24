@@ -5,6 +5,8 @@ metadata:
   namespace: project
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: theproject
@@ -22,7 +24,7 @@ spec:
             name: theproject-configmap
       containers:
         - name: theproject
-          image: alago0/theproject:8-13-2025
+          image: THEPROJECT/IMAGE
           volumeMounts:
           - name: random-image
             mountPath: /out/wwwroot/RandomPicture
