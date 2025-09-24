@@ -20,6 +20,7 @@ jobs:
   build-publish-deplooy:
     name: Build, Publish, and Deploy
     runs-on: ubuntu-latest
+    environment: main
 
     steps:
       - name: Checkout
