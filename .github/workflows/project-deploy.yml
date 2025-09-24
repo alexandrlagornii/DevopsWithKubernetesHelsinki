@@ -69,7 +69,6 @@ jobs:
           else
             echo "NAMESPACE=$BRANCH" >> $GITHUB_ENV
           fi
-          echo $NAMESPACE
 
       - name: Deploy
         run: |
