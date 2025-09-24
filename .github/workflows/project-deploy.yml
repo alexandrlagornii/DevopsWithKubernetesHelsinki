@@ -10,8 +10,8 @@ env:
   REGISTRY: europe-central2-docker.pkg.dev
   REPOSITORY: gregistry
   
-  PROJECT-IMAGE: project
-  TODOBACKEND-IMAGE: todobackend
+  PROJECT_IMAGE: project
+  TODOBACKEND_IMAGE: todobackend
   
   SERIVICE: project
   BRANCH: ${{ github.ref_name }}
@@ -46,12 +46,14 @@ jobs:
 
       - name: 'Form images names'
         run: |
-          echo "PROJECT_IMAGE_TAG=$REGISTRY/$PROJECT_ID/$REPOSITORY/$PROJECT-IMAGE:$BRANCH-$GITHUB_SHA" >> $GITHUB_ENV
-          echo "TODOBACKEND_IMAGE_TAG=$REGISTRY/$PROJECT_ID/$REPOSITORY/$TODOBACKEN-IMAGE:$BRANCH-$GITHUB_SHA" >> $GITHUB_ENV
+          echo "PROJECT_IMAGE_TAG=$REGISTRY/$PROJECT_ID/$REPOSITORY/$PROJECT_IMAGE:$BRANCH-$GITHUB_SHA" >> $GITHUB_ENV
+          echo "TODOBACKEND_IMAGE_TAG=$REGISTRY/$PROJECT_ID/$REPOSITORY/$TODOBACKEND_IMAGE:$BRANCH-$GITHUB_SHA" >> $GITHUB_ENV
 
       - name: 'Build and Push'
         run: |
+          echo "Project image: $PROJECT_IMAGE_TAG"
           docker build ./theproject/TheProject -t $PROJECT_IMAGE_TAG
           docker push $PROJECT_IMAGE_TAG
+          echo "TodoBackend image: $TODOBACKEND_IMAGE_TAG"
           docker build ./theproject/TodoBackend -t $TODOBACKEND_IMAGE_TAG
           docker push $TODOBACKEND_IMAGE_TAG
