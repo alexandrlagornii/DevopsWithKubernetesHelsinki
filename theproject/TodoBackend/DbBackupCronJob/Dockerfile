@@ -1,8 +1,9 @@
-FROM google/cloud-sdk:latest
+FROM google/cloud-sdk:stable
 WORKDIR /job
-COPY ./sa.json /data/sa.json
+COPY ./sa.json /sa/sa.json
 COPY ./script.sh .
-RUN gcloud auth login --cred-file="/data/sa.json" && \
-    apt-get update && \
-    apt-get install -y curl postgresql-client
+RUN apt-get update && \
+    apt-get install -y curl postgresql-client && \
+    rm -rf /var/lib/apt/lists/* && \
+	  gcloud auth login --cred-file="/sa/sa.json"
 CMD ["bash", "./script.sh"]
