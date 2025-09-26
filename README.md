@@ -38,4 +38,4 @@
 - [3.6](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.6/.github/workflows)
 - [3.7](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.7/.github/workflows)
 - [3.8](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.8/.github/workflows)
-- [3.10] (https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.10/theproject/TodoBackend)
+- [3.10](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.10/theproject/TodoBackend)
