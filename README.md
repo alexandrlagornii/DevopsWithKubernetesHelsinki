@@ -35,3 +35,6 @@
 - [3.3](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.3/LogOutput)
 - [3.4](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.4/LogOutput)
 - [3.5](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.5/theproject)
+- [3.6](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.6/.github/workflows)
+- [3.7](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.7/.github/workflows)
+- [3.8](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.8/.github/workflows)
