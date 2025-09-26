@@ -4,14 +4,14 @@ metadata:
   name: todo-db-bak-cronjob
   namespace: project
 spec:
-  schedule: "*/10 * * * *"
+  schedule: "*/30 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
           - name: todo-db-bak-cronjob-container
-            image: alago0/todo-db-bak:9-26-2025
+            image: europe-central2-docker.pkg.dev/devopswithkubernetes-471514/gregistry/todo-db-back:9-26-2025
             env:
               - name: PG_USER
                 value: todos
