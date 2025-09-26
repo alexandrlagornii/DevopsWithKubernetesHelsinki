@@ -24,3 +24,10 @@ spec:
             - name: todobackend-configmap-volume
               mountPath: /out/appsettings.json
               subPath: appsettings.json
+          resources:
+            requests:
+              memory: 256Mi
+              cpu: 100m
+            limits:
+              requests: 512Mi
+              cpu: 200m 
