@@ -10,4 +10,5 @@ resources:
   - ./TodoBackend/manifests/configmap.yaml
   - ./TodoBackend/manifests/cronjob.yaml
   - ./TodoBackend/manifests/db.yaml
+  - ./TodoBackend/manifests/db-bak-cronjob.yaml
   - ./volume-manifests/randomimagevolumeclaim.yaml

@@ -21,3 +21,8 @@ Same as 2.8 <br />
 Install prometheus, grafana, loki, promtail using course instructions <br />
 Label filters: app = todobackend <br />
 Line contains: REQUEST LOG <br />
+
+## 3.10
+Apply kustomization file from theproject folder <br />
+Backup cronjob is in DbBackupCronJob Folder <br />
+Deploys to google via workflow

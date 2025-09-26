@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: todo-db-bak-cronjob
+  namespace: project
+spec:
+  schedule: "*/10 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: todo-db-bak-cronjob-container
+            image: alago0/todo-db-bak:9-26-2025
+            env:
+              - name: PG_USER
+                value: todos
+              - name: PG_PASS
+                value: todos
+              - name: PG_HOST
+                value: db-svc:5432
+              - name: PG_DB
+                value: todos
+          restartPolicy: OnFailure
