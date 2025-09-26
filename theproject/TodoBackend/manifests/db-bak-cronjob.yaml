@@ -11,7 +11,7 @@ spec:
         spec:
           containers:
           - name: todo-db-bak-cronjob-container
-            image: europe-central2-docker.pkg.dev/devopswithkubernetes-471514/gregistry/todo-db-back:9-26-2025-ver3
+            image: europe-central2-docker.pkg.dev/devopswithkubernetes-471514/gregistry/todo-db-back:9-26-2025-ver4
             env:
               - name: PG_USER
                 value: todos
