@@ -42,3 +42,4 @@
 - [3.11](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/3.11/theproject)
 
 ### Chapter 5
+- [4.1](https://github.com/alexandrlagornii/DevopsWithKubernetesHelsinki/tree/4.1/exercises)
