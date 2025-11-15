@@ -1,4 +1,5 @@
 using LogOutputReadApi.PingPongService;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,4 +33,19 @@ app.MapGet("/", async (PingPongClient client) =>
   }
 });
 
-app.Run();
+app.MapGet("/healthz", async (PingPongClient client) =>
+{
+  bool isHealthy = await client.CheckHealth();
+  Console.WriteLine($"Is Healty {isHealthy}");
+  if (isHealthy)
+  {
+    return Results.Ok();
+  }
+  else
+  {
+    return Results.BadRequest();
+  }
+});
+
+app.Run($"http://*:80");
+

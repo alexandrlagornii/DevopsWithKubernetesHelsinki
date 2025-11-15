@@ -26,7 +26,7 @@ spec:
             - name: shared-logoutput
               mountPath: /out/LogoutputShared
         - name: logoutput-read-api
-          image: alago0/logoutput-read-api:8-18-2025
+          image: alago0/logoutput-read-api:11-15-2025-3
           env:
             - name: MESSAGE
               valueFrom:
@@ -42,3 +42,10 @@ spec:
             - name: config-logoutput
               mountPath: /out/appsettings.json
               subPath: appsettings.json
+          readinessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 30
+            httpGet:
+              path: /healthz
+              port: 80

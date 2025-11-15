@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Security.Cryptography;
+using System.Threading.Tasks;
 using Npgsql;
 
 namespace PingPong
@@ -44,6 +45,23 @@ namespace PingPong
     {
       await IncreaseCounter();
       return (await GetCounter());
+    }
+
+    public async Task<bool> HealthCheck()
+    {
+      try
+      {
+        await using var dataSource = NpgsqlDataSource.Create(_connectionString);
+        await using (var cmd = dataSource.CreateCommand("Select 1;"))
+        {
+          await cmd.ExecuteNonQueryAsync();
+          return true;
+        }
+      }
+      catch
+      {
+        return false;
+      }
     }
   }
 }

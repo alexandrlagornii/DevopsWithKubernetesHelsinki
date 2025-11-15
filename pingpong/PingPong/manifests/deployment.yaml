@@ -15,11 +15,17 @@ spec:
     spec:
       containers:
         - name: pingpong
-          image: alago0/pingpong:9-9-2025-ver2
+          image: alago0/pingpong:11-15-2025
           volumeMounts:
           - name: pingpong-configmap-volume
             mountPath: /out/appsettings.json
             subPath: appsettings.json
+          readinessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            httpGet:
+              path: /pingpong/healthz
+              port: 80
       volumes:
         - name: pingpong-configmap-volume
           configMap:
